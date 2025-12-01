@@ -1,0 +1,9 @@
+{% block cms_block_review_form %}
+    <div class="cms-block-review-form">
+        {% set element = block.slots.getSlot('content') %}
+
+        {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' with {
+            'element': element
+        } %}
+    </div>
+{% endblock %}

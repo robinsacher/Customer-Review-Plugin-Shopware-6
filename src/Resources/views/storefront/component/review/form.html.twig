@@ -1,0 +1,43 @@
+<div class="container pt-4" data-review-plugin>
+    <h1>Kundenbewertungen</h1>
+
+    <form id="review-form" novalidate>
+        <!-- Sterne -->
+        <div class="mb-3">
+            <label class="form-label d-block required">Sterne</label>
+            <div id="star-rating" aria-label="Sterne wählen">
+                {% for i in 1..5 %}
+                    <span class="star" data-value="{{ i }}">☆</span>
+                {% endfor %}
+            </div>
+            <input type="hidden" name="stars" id="rev-stars" required>
+            <div class="invalid-feedback">Bitte Sterne auswählen.</div>
+        </div>
+
+        <!-- Kommentar -->
+        <div class="mb-3">
+            <label for="rev-comment" class="form-label">Kommentar</label>
+            <textarea id="rev-comment" name="comment" class="form-control" rows="3"></textarea>
+            <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- E-Mail -->
+        <div class="mb-3">
+            <label for="rev-email" class="form-label required">E-Mail</label>
+            <input id="rev-email" name="email" type="email" class="form-control" required>
+            <div class="invalid-feedback">Bitte eine gültige E-Mail-Adresse eingeben.</div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Absenden</button>
+    </form>
+
+    <hr class="my-4">
+
+    <!-- Reviews -->
+    <div id="reviews"
+         data-list-url="{{ path('frontend.review.list') }}"
+         data-save-url="{{ path('frontend.review.save') }}"
+         data-max-length="{{ config('VorbereitungCustomerReview.config.maxCommentLength') }}"
+         data-error-message="{{ config('VorbereitungCustomerReview.config.commentTooLongMessage') }}">
+    </div>
+</div>

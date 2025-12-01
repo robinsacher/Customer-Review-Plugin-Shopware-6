@@ -1,0 +1,33 @@
+{% block customer_reviews_list %}
+    <sw-page class="customer-reviews-list">
+        <template #smart-bar-header>
+            <h2>{{ $tc('vorbereitung-customer-review.general.mainMenuItemGeneral') }}</h2>
+        </template>
+
+        <template #content>
+            <sw-card-view>
+                <sw-card :title="$tc('vorbereitung-customer-review.list.cardTitle')">
+
+                    <sw-data-grid
+                            :dataSource="items"
+                            :columns="[
+                                { property: 'stars', label: $tc('vorbereitung-customer-review.list.columnStars') },
+                                { property: 'comment', label: $tc('vorbereitung-customer-review.list.columnComment') },
+                                { property: 'email', label: $tc('vorbereitung-customer-review.list.columnEmail') },
+                                { property: 'active', label: $tc('vorbereitung-customer-review.list.columnActive'), align: 'center' }
+                            ]"
+                            :showSelection="false">
+
+                        <template #column-active="{ item }">
+                            <sw-switch-field
+                                    size="small"
+                                    :value="item.active"
+                                    @update:value="onToggleActive(item, $event)">
+                            </sw-switch-field>
+                        </template>
+                    </sw-data-grid>
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

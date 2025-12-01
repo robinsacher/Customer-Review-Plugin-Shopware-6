@@ -1,0 +1,21 @@
+{
+    "vorbereitung-customer-review": {
+        "general": {
+            "mainMenuItemGeneral": "Customer Reviews",
+            "descriptionTextModule": "Manage customer reviews."
+        },
+        "list": {
+            "cardTitle": "Customer Reviews",
+            "columnStars": "Stars",
+            "columnComment": "Comment",
+            "columnEmail": "Email",
+            "columnActive": "Active"
+        },
+        "notifications": {
+            "activate": "Entry has been activated.",
+            "deactivate": "Entry has been deactivated.",
+            "saveErrorTitle": "Save error",
+            "saveErrorMessage": "Update failed."
+        }
+    }
+}

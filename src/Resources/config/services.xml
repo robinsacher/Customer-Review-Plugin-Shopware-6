@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!-- Entity Definition -->
+        <service
+                id="VorbereitungCustomerReview\Core\Content\VorbereitungCustomerReview\VorbereitungCustomerReviewDefinition">
+            <tag name="shopware.entity.definition" entity="vorbereitung_customer_review"/>
+        </service>
+
+        <!-- Storefront Controller -->
+        <service id="VorbereitungCustomerReview\Storefront\Controller\ReviewController" public="true">
+            <argument type="service" id="VorbereitungCustomerReview\Service\VorbereitungCustomerReviewService"/>
+            <!-- NEU: Validation Service als 2. Argument -->
+            <argument type="service" id="VorbereitungCustomerReview\Service\ReviewValidationService"/>
+
+            <tag name="controller.service_arguments"/>
+            <tag name="shopware.storefront.controller"/>
+            <tag name="container.service_subscriber"/>
+
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+
+            <call method="setTwig">
+                <argument type="service" id="twig"/>
+            </call>
+        </service>
+
+        <!-- Review Service -->
+        <service id="VorbereitungCustomerReview\Service\VorbereitungCustomerReviewService">
+            <argument type="service" id="vorbereitung_customer_review.repository"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <!-- NEU: Validation Service -->
+        <service id="VorbereitungCustomerReview\Service\ReviewValidationService">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <!-- Sitemap Subscriber -->
+        <service id="VorbereitungCustomerReview\Subscriber\SitemapSubscriber">
+            <argument type="service" id="router"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <!-- Cookie Listener -->
+        <service id="VorbereitungCustomerReview\Listener\CookieListener">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+    </services>
+</container>

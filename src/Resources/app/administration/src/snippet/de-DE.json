@@ -1,0 +1,21 @@
+{
+    "vorbereitung-customer-review": {
+        "general": {
+            "mainMenuItemGeneral": "Kundenbewertungen",
+            "descriptionTextModule": "Verwaltung der Kundenbewertungen."
+        },
+        "list": {
+            "cardTitle": "Kundenbewertungen",
+            "columnStars": "Sterne",
+            "columnComment": "Kommentar",
+            "columnEmail": "E-Mail",
+            "columnActive": "Aktiv"
+        },
+        "notifications": {
+            "activate": "Eintrag wurde aktiviert.",
+            "deactivate": "Eintrag wurde deaktiviert.",
+            "saveErrorTitle": "Fehler beim Speichern",
+            "saveErrorMessage": "Aktualisierung fehlgeschlagen."
+        }
+    }
+}

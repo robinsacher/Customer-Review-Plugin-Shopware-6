@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Kundenbewertungen</title>
+
+        <input-field type="int">
+            <name>maxCommentLength</name>
+            <label>Maximale Zeichenlänge für Kommentare</label>
+            <defaultValue>500</defaultValue>
+        </input-field>
+
+        <input-field type="text">
+            <name>commentTooLongMessage</name>
+            <label>Fehlermeldung bei Überschreitung</label>
+            <defaultValue>Der Kommentar ist zu lang.</defaultValue>
+        </input-field>
+    </card>
+</config>

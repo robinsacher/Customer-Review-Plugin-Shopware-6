@@ -1,0 +1,29 @@
+{
+    "name": "vorbereitung-customer-review/vorbereitung-customer-review",
+    "description": "vorbereitung-customer-review/vorbereitung-customer-review",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0",
+        "shopware/storefront": "~6.6.0"
+
+    },
+    "extra": {
+        "shopware-plugin-class": "VorbereitungCustomerReview\\VorbereitungCustomerReview",
+        "label": {
+            "de-DE": "Vorbereitung Customer Review",
+            "en-GB": "Preparation Customer Review"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "VorbereitungCustomerReview\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VorbereitungCustomerReview\\Tests\\": "tests/"
+        }
+    }
+}
