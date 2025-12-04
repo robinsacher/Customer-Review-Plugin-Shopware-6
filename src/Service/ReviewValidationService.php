@@ -13,9 +13,6 @@ class ReviewValidationService
     {
     }
 
-    /**
-     * Serverseitige Prüfung: Cookie Consent vorhanden?
-     */
     public function validateCookieConsent(): ?JsonResponse
     {
         $consent = $_COOKIE['customer-review-enabled'] ?? null;
@@ -30,9 +27,6 @@ class ReviewValidationService
         return null;
     }
 
-    /**
-     * Serverseitige Prüfung des Inputs (Sterne, Email, Kommentar)
-     */
     public function validateInput(array $data): ?JsonResponse
     {
         $maxLength = (int)($this->config->get('VorbereitungCustomerReview.config.maxCommentLength') ?? 500);

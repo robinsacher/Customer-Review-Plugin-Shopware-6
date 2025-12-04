@@ -24,7 +24,6 @@ class SitemapSubscriber implements EventSubscriberInterface
 
     public function onSitemapPopulate(SitemapPopulateEvent $event): void
     {
-        // URL
         $url = $this->router->generate(
             'frontend.review.page',
             [],

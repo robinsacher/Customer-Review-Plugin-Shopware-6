@@ -38,17 +38,14 @@ class ReviewController extends StorefrontController
     {
         $data = $request->request->all();
 
-        // Cookie validieren
         if ($error = $this->validationService->validateCookieConsent()) {
             return $error;
         }
 
-        // Input validieren
         if ($error = $this->validationService->validateInput($data)) {
             return $error;
         }
 
-        // speichern
         return $this->reviewService->saveReview($data, $context);
     }
 }

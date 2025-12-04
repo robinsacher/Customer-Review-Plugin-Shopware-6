@@ -18,9 +18,6 @@ class VorbereitungCustomerReviewService
     {
     }
 
-    /**
-     * Reviews anzeigen
-     */
     public function getReviews(Context $context): JsonResponse
     {
         try {
@@ -52,9 +49,6 @@ class VorbereitungCustomerReviewService
         }
     }
 
-    /**
-     * Review speichern (Validierung läuft im Controller)
-     */
     public function saveReview(array $data, Context $context): JsonResponse
     {
         try {
