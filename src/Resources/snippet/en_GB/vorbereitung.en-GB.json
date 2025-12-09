@@ -1,0 +1,10 @@
+{
+    "vorbereitung": {
+        "cookie": {
+            "review": {
+                "label": "Enable customer reviews",
+                "description": "Allows submitting customer reviews"
+            }
+        }
+    }
+}

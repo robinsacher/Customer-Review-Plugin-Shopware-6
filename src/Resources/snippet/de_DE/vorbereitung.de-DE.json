@@ -1,0 +1,10 @@
+{
+    "vorbereitung": {
+        "cookie": {
+            "review": {
+                "label": "Bewertungen aktivieren",
+                "description": "Ermöglicht das Absenden einer Kundenbewertung"
+            }
+        }
+    }
+}
