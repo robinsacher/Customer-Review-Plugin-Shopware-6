@@ -48,8 +48,9 @@
         </service>
 
         <!-- Cookie Listener -->
-        <service id="VorbereitungCustomerReview\Listener\CookieListener">
-            <tag name="kernel.event_subscriber"/>
+        <service id="VorbereitungCustomerReview\Framework\Cookie\CustomCookieProvider"
+                 decorates="Shopware\Storefront\Framework\Cookie\CookieProviderInterface">
+            <argument type="service" id="VorbereitungCustomerReview\Framework\Cookie\CustomCookieProvider.inner"/>
         </service>
 
     </services>
