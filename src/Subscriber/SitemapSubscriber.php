@@ -27,13 +27,13 @@ class SitemapSubscriber implements EventSubscriberInterface
         $url = $this->router->generate(
             'frontend.review.page',
             [],
-            RouterInterface::ABSOLUTE_URL
+            UrlGeneratorInterface::ABSOLUTE_URL
         );
 
         $event->getUrlContainer()->addUrl(
             $url,
             $event->getSalesChannelId(),
-            new \DateTimeImmutable(),
+            new DateTimeImmutable(),
             SitemapPopulateEvent::CHANGEFREQ_DAILY,
             0.8
         );

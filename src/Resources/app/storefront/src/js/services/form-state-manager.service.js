@@ -1,3 +1,4 @@
+// Formular aktivieren/deaktivieren
 export default class FormStateManager {
     constructor(form, submitButtonSelector = 'button[type="submit"]') {
         this.form = form;

@@ -20,7 +20,7 @@ class ReviewController extends StorefrontController
     #[Route(
         path: '/customer-review/list',
         name: 'frontend.review.list',
-        defaults: ['_csrf_protected' => false, 'XmlHttpRequest' => true],
+        defaults: ['_csrf_protected' => true, 'XmlHttpRequest' => true],
         methods: ['GET']
     )]
     public function list(Context $context): JsonResponse
@@ -31,7 +31,7 @@ class ReviewController extends StorefrontController
     #[Route(
         path: '/customer-review/save',
         name: 'frontend.review.save',
-        defaults: ['_csrf_protected' => false, 'XmlHttpRequest' => true],
+        defaults: ['_csrf_protected' => true, 'XmlHttpRequest' => true],
         methods: ['POST']
     )]
     public function save(Request $request, Context $context): JsonResponse

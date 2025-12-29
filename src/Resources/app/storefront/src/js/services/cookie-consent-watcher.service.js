@@ -1,3 +1,4 @@
+// Cookie-Änderungen überwachen
 export default class CookieConsentWatcher {
     constructor(consentService, onChange, interval = 100) {
         this.consentService = consentService;
@@ -8,6 +9,7 @@ export default class CookieConsentWatcher {
         this.start();
     }
 
+    // Cookie-Änderungen überwachen
     start() {
         this.interval = setInterval(() => {
             const current = this.consentService.getValue();
@@ -18,6 +20,7 @@ export default class CookieConsentWatcher {
         }, this.intervalTime);
     }
 
+    // Überwachung stoppen
     destroy() {
         if (this.interval) {
             clearInterval(this.interval);

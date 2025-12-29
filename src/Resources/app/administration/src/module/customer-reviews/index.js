@@ -1,4 +1,6 @@
 import './page/customer-reviews-list';
+import deDE from '../../snippet/de-DE.json';
+import enGB from '../../snippet/en-GB.json';
 
 const {Module} = Shopware;
 
@@ -7,7 +9,7 @@ Module.register('customer-reviews', {
     name: 'Customer Reviews',
     title: 'vorbereitung-customer-review.general.mainMenuItemGeneral',
     description: 'vorbereitung-customer-review.general.descriptionTextModule',
-    color: '#ffcc00',
+    color: '#0074ff',
     icon: 'default-action-star',
 
     routes: {
@@ -20,7 +22,7 @@ Module.register('customer-reviews', {
     navigation: [{
         id: 'customer-reviews',
         label: 'vorbereitung-customer-review.general.mainMenuItemGeneral',
-        color: '#ffcc00',
+        color: '#0074ff',
         path: 'customer.reviews.list',
         icon: 'default-action-star',
         parent: 'sw-content',
@@ -28,8 +30,7 @@ Module.register('customer-reviews', {
     }],
 
     snippets: {
-        'de-DE': require('../../snippet/de-DE.json'),
-        'en-GB': require('../../snippet/en-GB.json')
+        'de-DE': deDE,
+        'en-GB': enGB
     },
-
 });

@@ -6,20 +6,20 @@ use Shopware\Storefront\Framework\Cookie\CookieProviderInterface;
 
 class CustomCookieProvider implements CookieProviderInterface
 {
-    private const TARGET_GROUP_SNIPPET = 'cookie.groupComfortFeatures';
+    private const COOKIE_GROUP = 'cookie.groupComfortFeatures';
 
-    private CookieProviderInterface $originalService;
+    private CookieProviderInterface $baseCookieProvider;
 
-    public function __construct(CookieProviderInterface $service)
+    public function __construct(CookieProviderInterface $cookieProvider)
     {
-        $this->originalService = $service;
+        $this->baseCookieProvider = $cookieProvider;
     }
 
     public function getCookieGroups(): array
     {
-        $cookieGroups = $this->originalService->getCookieGroups();
+        $cookieGroups = $this->baseCookieProvider->getCookieGroups();
 
-        $newCookie = [
+        $customerReviewCookie = [
             'snippet_name' => 'vorbereitung.cookie.review.label',
             'snippet_description' => 'vorbereitung.cookie.review.description',
             'cookie' => 'customer-review-enabled',
@@ -28,8 +28,8 @@ class CustomCookieProvider implements CookieProviderInterface
         ];
 
         foreach ($cookieGroups as &$group) {
-            if (($group['snippet_name'] ?? '') === self::TARGET_GROUP_SNIPPET) {
-                $group['entries'][] = $newCookie;
+            if (($group['snippet_name'] ?? '') === self::COOKIE_GROUP) {
+                $group['entries'][] = $customerReviewCookie;
                 return $cookieGroups;
             }
         }
