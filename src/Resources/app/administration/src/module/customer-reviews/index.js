@@ -8,9 +8,6 @@ Module.register('customer-reviews', {
     type: 'plugin',
     name: 'Customer Reviews',
     title: 'vorbereitung-customer-review.general.mainMenuItemGeneral',
-    description: 'vorbereitung-customer-review.general.descriptionTextModule',
-    color: '#0074ff',
-    icon: 'default-action-star',
 
     routes: {
         list: {
@@ -22,11 +19,8 @@ Module.register('customer-reviews', {
     navigation: [{
         id: 'customer-reviews',
         label: 'vorbereitung-customer-review.general.mainMenuItemGeneral',
-        color: '#0074ff',
         path: 'customer.reviews.list',
-        icon: 'default-action-star',
         parent: 'sw-content',
-        position: 100
     }],
 
     snippets: {

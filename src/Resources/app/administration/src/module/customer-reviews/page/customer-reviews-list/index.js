@@ -34,13 +34,11 @@ Component.register('customer-reviews-list', {
 
         async onToggleActive(item, newValue) {
             try {
-                // Hole eine frische Entität aus der DB (Proxy bleibt intakt)
                 const entity = await this.repository.get(item.id, Shopware.Context.api);
                 entity.active = newValue;
 
                 await this.repository.save(entity, Shopware.Context.api);
 
-                // Aktualisiere lokale Liste (oder lade alles neu)
                 this.items = this.items.map(i => {
                     if (i.id === entity.id) {
                         return entity;

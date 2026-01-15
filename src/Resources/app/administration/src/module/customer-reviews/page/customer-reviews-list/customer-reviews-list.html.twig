@@ -10,13 +10,33 @@
 
                     <sw-data-grid
                             :dataSource="items"
+                            :compact="false"
                             :columns="[
-                                { property: 'stars', label: $tc('vorbereitung-customer-review.list.columnStars') },
-                                { property: 'comment', label: $tc('vorbereitung-customer-review.list.columnComment') },
-                                { property: 'email', label: $tc('vorbereitung-customer-review.list.columnEmail') },
-                                { property: 'active', label: $tc('vorbereitung-customer-review.list.columnActive'), align: 'center' }
+                                {
+                                    property: 'stars',
+                                    label: $tc('vorbereitung-customer-review.list.columnStars')
+                                },
+
+                                {
+                                    property: 'comment',
+                                    label: $tc('vorbereitung-customer-review.list.columnComment'),
+                                    width: '500px',
+                                    multiLine: true
+                                },
+
+                                {
+                                    property: 'email',
+                                    label: $tc('vorbereitung-customer-review.list.columnEmail')
+                                },
+
+                                {
+                                    property: 'active',
+                                    label: $tc('vorbereitung-customer-review.list.columnActive'),
+                                    align: 'center'
+                                }
                             ]"
-                            :showSelection="false">
+                            :showSelection="false"
+                            :showActions="false">
 
                         <template #column-active="{ item }">
                             <sw-switch-field
@@ -26,6 +46,7 @@
                             </sw-switch-field>
                         </template>
                     </sw-data-grid>
+
                 </sw-card>
             </sw-card-view>
         </template>

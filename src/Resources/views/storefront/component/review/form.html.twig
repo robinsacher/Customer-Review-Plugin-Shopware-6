@@ -3,7 +3,7 @@
 
     <form id="review-form" novalidate>
         <!-- Sterne -->
-        <div class="mb-3">
+        <div class="mb-5">
             <label class="form-label d-block required">Sterne</label>
             <div id="star-rating" aria-label="Sterne wählen">
                 {% for i in 1..5 %}
@@ -15,14 +15,14 @@
         </div>
 
         <!-- Kommentar -->
-        <div class="mb-3">
+        <div class="mb-5">
             <label for="rev-comment" class="form-label">Kommentar</label>
             <textarea id="rev-comment" name="comment" class="form-control" rows="3"></textarea>
             <div class="invalid-feedback"></div>
         </div>
 
         <!-- E-Mail -->
-        <div class="mb-3">
+        <div class="mb-5">
             <label for="rev-email" class="form-label required">E-Mail</label>
             <input id="rev-email" name="email" type="email" class="form-control" required>
             <div class="invalid-feedback">Bitte eine gültige E-Mail-Adresse eingeben.</div>

@@ -1,8 +1,7 @@
 {
     "vorbereitung-customer-review": {
         "general": {
-            "mainMenuItemGeneral": "Kundenbewertungen",
-            "descriptionTextModule": "Verwaltung der Kundenbewertungen."
+            "mainMenuItemGeneral": "Kundenbewertungen"
         },
         "list": {
             "cardTitle": "Kundenbewertungen",

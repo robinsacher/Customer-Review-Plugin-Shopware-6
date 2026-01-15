@@ -17,7 +17,7 @@ class Migration1757330932CreateVorbereitungCustomerReviewTable extends Migration
         $sql = <<<SQL
         CREATE TABLE IF NOT EXISTS `vorbereitung_customer_review` (
             `id` BINARY(16) NOT NULL,
-            `stars` TINYINT UNSIGNED NOT NULL, -- Bewertung (1–5 Sterne)
+            `stars` TINYINT UNSIGNED NOT NULL,
             `comment` LONGTEXT COLLATE utf8mb4_unicode_ci NULL,
             `email` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
             `created_at` DATETIME(3) NOT NULL,

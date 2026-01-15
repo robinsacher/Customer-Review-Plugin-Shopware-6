@@ -33,7 +33,7 @@ class ReviewValidationService
 
         $stars = (int)($data['stars'] ?? 0);
         $email = trim((string)($data['email'] ?? ''));
-        $comment = trim((string)($data['comment'] ?? ''));
+        $comment = (string)($data['comment'] ?? '');
 
         if ($stars < 1 || $stars > 5) {
             return new JsonResponse([
@@ -53,13 +53,6 @@ class ReviewValidationService
         $comment = strip_tags($comment);
         $comment = preg_replace('/\p{C}+/u', '', $comment);
         $comment = trim($comment);
-
-        if ($comment === '') {
-            return new JsonResponse([
-                'success' => false,
-                'error' => 'Kommentar darf nicht leer sein.'
-            ], 400);
-        }
 
         if (mb_strlen($comment) > $maxLength) {
             return new JsonResponse([
