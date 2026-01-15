@@ -1,1 +1,0 @@
-# Customer-Review-Plugin-Shopware-6
